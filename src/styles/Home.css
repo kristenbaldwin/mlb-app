@@ -1,0 +1,42 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.content {
+    padding: 0 20px;
+}
+
+h2, h3 {
+    font-weight: 600;
+}
+
+.leagueHeader {
+    margin: 35px 0 0 0;
+    text-decoration: underline;
+}
+
+.divBlock {
+    padding: 0;
+}
+
+.borders {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.teamBlock {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px 0 5px 18%;
+}
+
+.teamName {
+    margin: auto 7px;
+    font-weight: 400;
+    color: black !important;
+}
+
+.teamName:hover {
+    text-decoration: underline;
+    color: #D50032 !important;
+}

@@ -1,3 +1,43 @@
+.container-fluid {
+  padding: 0;
+}
+
 .App {
   text-align: center;
+}
+
+.navbar {
+  background-color: #002D72;
+  vertical-align: middle;
+  border-radius: 0;
+  border: 0;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+  color: #D50032 !important;
+}
+
+.navbar-nav > li, .navbar-header {
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+}
+
+.navbar-nav > li:hover {
+  border-bottom: 3px solid #D50032;
+  box-sizing: border-box !important;
 }
