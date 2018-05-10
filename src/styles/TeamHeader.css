@@ -1,0 +1,42 @@
+.teamHeader, .currentTeamName {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.teamHeader {
+    border-bottom: 1px solid rgb(146, 146, 146);
+    box-shadow: 0 0 4px rgb(102, 101, 101);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.currentTeamName {
+    height: 80px;
+    margin: auto 0;
+    padding: 0;
+}
+
+.currentTeamName > h1 {
+    margin: auto 0 auto 25px;
+    /* line-height: 2.4em; */
+    /* line-height: 1.3em; */
+}
+
+.logo {
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .currentTeamName > h1 {
+        margin: auto -10px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .currentTeamName > h1 {
+        margin: auto -40px;
+    }
+}
+
+

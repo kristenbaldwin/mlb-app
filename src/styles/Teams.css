@@ -1,0 +1,18 @@
+body {
+    font-size: 16px;
+}
+
+.table {
+    width: 60%;
+    margin: 0 auto 30px auto;
+}
+
+.rowHeader {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+}
+
+.rosterHeader {
+    margin-top: 15px;
+}

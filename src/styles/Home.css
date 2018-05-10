@@ -27,7 +27,8 @@ h2, h3 {
 .teamBlock {
     display: flex;
     justify-content: flex-start;
-    margin: 5px 0 5px 18%;
+    margin: 5px auto;
+    width: 260px;
 }
 
 .teamName {

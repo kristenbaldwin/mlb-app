@@ -5,15 +5,13 @@ import '../styles/Footer.css';
 class Footer extends Component {
     render() {
         return (
-            <div>
-                <Row className="footer">
-                    <Col>
-                        <div>
-                            MLB Teams &#169; 2018
-                        </div>
-                    </Col>
-                </Row>
-            </div>
+            <Row className="footer">
+                <Col>
+                    <div>
+                        MLB Teams &#169; 2018
+                    </div>
+                </Col>
+            </Row>
         )
     }
 }

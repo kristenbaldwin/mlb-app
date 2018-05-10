@@ -1,0 +1,29 @@
+.formHeader {
+    margin-top: 45px;
+}
+
+form {
+    width: 70%;
+    margin: 25px auto;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.form-control {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.btn {
+    background-color: #D50032;
+    color: white;
+    padding: 6px;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #002D72;
+    color: white;
+}

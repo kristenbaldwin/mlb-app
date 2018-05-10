@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import '../styles/Header.css';
 import ReactPlayer from 'react-player';
 
-class Header extends Component {
+class MainHeader extends Component {
     render() {
         return (
             <div>
@@ -16,7 +16,7 @@ class Header extends Component {
             </Row>
             <Row>
                 <Col>
-                    <p>Welcome! Select a team to see more details such as roster, team record, and venue name.</p>
+                    <p>Welcome! Select a team to see more details such as roster, year established, and venue name.</p>
                 </Col>
             </Row>
             </div>
@@ -24,4 +24,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default MainHeader;

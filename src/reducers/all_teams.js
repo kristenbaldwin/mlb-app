@@ -1,18 +1,18 @@
 //Reducer
 const initialState = {
-    teamId: "0"
+    teams: []
 }
 
-function team_id(state = initialState, action) {
+function allTeams(state = initialState, action) {
     switch (action.type) {
-        case "SELECT_TEAM":
+        case "ALL_TEAMS":
             return {
-                teamId: action.id
+                teams: action.teams
             }
         default: 
             return state;
     }
 }
 
-export default team_id;
+export default allTeams;
 

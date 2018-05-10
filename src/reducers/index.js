@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import teamReducer from './team_id';
+import team_id from './team_id';
+import allTeams from './all_teams';
 
 const rootReducer = combineReducers({
-    team: teamReducer
+    team: team_id,
+    teams: allTeams
 });
 
 export default rootReducer;

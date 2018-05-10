@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import MainHeader from './MainHeader';
+import { loadAllTeams } from '../actions/AllTeams_actions';
 import '../styles/Home.css';
 
 class Home extends Component {
@@ -18,27 +21,29 @@ class Home extends Component {
     };
 
     componentDidMount() {
-        fetch('http://lookup-service-prod.mlb.com/json/named.team_all.bam?sport_code=%27mlb%27&active_sw=%27Y%27&all_star_sw=%27N%27')
-        .then(results => {
-            return results.json();
-        }).then(data => {
-            let teams = data.team_all.queryResults.row;
-            this.setState({teams: teams});
+        this.props.onTeamsLoad()
+        // fetch('http://lookup-service-prod.mlb.com/json/named.team_all.bam?sport_code=%27mlb%27&active_sw=%27Y%27&all_star_sw=%27N%27')
+        // .then(results => {
+        //     return results.json();
+        // }).then(data => {
+        //     let teams = data.team_all.queryResults.row;
+        //     this.setState({teams: teams});
 
-            let aleTeams = this.state.teams.map((team) => {
+            let aleTeams = this.props.allTeams.map((team) => {
+            // let aleTeams = this.state.teams.map((team) => {
                 if (team.division_abbrev === "ALE") {
                     return (
                         <div key={team.name_display_full} className="teamBlock">
                             <img src={"http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=50&w=50"} alt={team.name_display_full}/>
-                            <a href={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team.team_id)} className="teamName"><h4>{team.name_display_full}</h4></a>
+                            <Link to={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team)} 
+                            className="teamName"><h4>{team.name_display_full}</h4></Link>
                         </div>
                     )
                 }
             })
             this.setState({aleTeams: aleTeams}) 
-            console.log('aleteams:', this.state.aleTeams);
 
-            let alcTeams = this.state.teams.map((team) => {
+            let alcTeams = this.props.allTeams.map((team) => {
                 if (team.name_abbrev === "CWS") {
                     team.name_abbrev = "CHW";
                 }
@@ -46,65 +51,67 @@ class Home extends Component {
                     return (
                         <div key={team.name_display_full} className="teamBlock">
                             <img src={"http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=50&w=50"} alt={team.name_display_full}/>
-                            <a href={"/team/" + team.team_id} className="teamName"><h4>{team.name_display_full}</h4></a>
+                            <Link to={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team)} className="teamName"><h4>{team.name_display_full}</h4></Link>
                         </div>
                     )
                 }
             })
             this.setState({alcTeams: alcTeams}) 
 
-            let alwTeams = this.state.teams.map((team) => {
+            let alwTeams = this.props.allTeams.map((team) => {
                 if (team.division_abbrev === "ALW") {
                     return (
                         <div key={team.name_display_full} className="teamBlock">
                             <img src={"http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=50&w=50"} alt={team.name_display_full}/>
-                            <a href={"/team/" + team.team_id} className="teamName"><h4>{team.name_display_full}</h4></a>
+                            <Link to={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team)} className="teamName"><h4>{team.name_display_full}</h4></Link>
                         </div>
                     )
                 }
             })
             this.setState({alwTeams: alwTeams}) 
 
-            let nleTeams = this.state.teams.map((team) => {
+            let nleTeams = this.props.allTeams.map((team) => {
                 if (team.division_abbrev === "NLE") {
                     return (
                         <div key={team.name_display_full} className="teamBlock">
                             <img src={"http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=50&w=50"} alt={team.name_display_full}/>
-                            <a href={"/team/" + team.team_id} className="teamName"><h4>{team.name_display_full}</h4></a>
+                            <Link to={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team)} className="teamName"><h4>{team.name_display_full}</h4></Link>
                         </div>
                     )
                 }
             })
             this.setState({nleTeams: nleTeams}) 
 
-            let nlcTeams = this.state.teams.map((team) => {
+            let nlcTeams = this.props.allTeams.map((team) => {
                 if (team.division_abbrev === "NLC") {
                     return (
                         <div key={team.name_display_full} className="teamBlock">
                             <img src={"http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=50&w=50"} alt={team.name_display_full}/>
-                            <a href={"/team/" + team.team_id} className="teamName"><h4>{team.name_display_full}</h4></a>
+                            <Link to={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team)} className="teamName"><h4>{team.name_display_full}</h4></Link>
                         </div>
                     )
                 }
             })
             this.setState({nlcTeams: nlcTeams}) 
 
-            let nlwTeams = this.state.teams.map((team) => {
+            let nlwTeams = this.props.allTeams.map((team) => {
                 if (team.division_abbrev === "NLW") {
                     return (
                         <div key={team.name_display_full} className="teamBlock">
                             <img src={"http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=50&w=50"} alt={team.name_display_full}/>
-                            <a href={"/team/" + team.team_id} className="teamName"><h4>{team.name_display_full}</h4></a>
+                            <Link to={"/team/" + team.team_id} onClick={() => this.props.onTeamSelect(team)} className="teamName"><h4>{team.name_display_full}</h4></Link> 
                         </div>
                     )
                 }
             })
             this.setState({nlwTeams: nlwTeams}) 
-        })
+        // })
     }
 
     render() {
         return (
+            <div>
+            <MainHeader />
             <div className="content">
                 <Row>
                     <Col>
@@ -145,17 +152,25 @@ class Home extends Component {
                     </Col>
                 </Row>
             </div>
+        </div>
         )
     } 
 }
 
+function mapStateToProps(state) {
+    return {
+        allTeams: state.teams.teams
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
+        onTeamsLoad: () => dispatch(loadAllTeams()),
         onTeamSelect: (id) => dispatch({
             type: "SELECT_TEAM",
-            id: id
+            id: id   
         })
     }
 }
 
-export default connect(mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
