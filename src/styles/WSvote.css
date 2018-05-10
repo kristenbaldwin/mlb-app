@@ -1,10 +1,11 @@
 .formHeader {
-    margin-top: 45px;
+    margin-top: 7%;
+    margin-bottom: 0;
 }
 
 form {
     width: 70%;
-    margin: 25px auto;
+    margin: 15px auto;
     padding: 15px;
     font-size: 18px;
 }
@@ -26,4 +27,14 @@ form {
 .btn:hover {
     background-color: #002D72;
     color: white;
+}
+
+.matchup {
+    margin-top: 15px;
+}
+
+.versus {
+    font-size: 40px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
