@@ -85,7 +85,8 @@ class Home extends Component {
         return (
             <div>
             <MainHeader />
-            <div className="content">
+            <Row className="content">
+            <Col xs={12}>
                 <Row>
                     <Col>
                         <h2 className="leagueHeader">American League</h2>
@@ -124,7 +125,8 @@ class Home extends Component {
                         <div>{nlwTeams}</div>
                     </Col>
                 </Row>
-            </div>
+                </Col>
+            </Row>
         </div>
         )
     } 

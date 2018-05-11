@@ -41,3 +41,10 @@ h2, h3 {
     text-decoration: underline;
     color: #D50032 !important;
 }
+
+@media (max-width: 767px) {
+    .borders {
+        border-left: none;
+        border-right: none;
+    }
+}

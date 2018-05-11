@@ -8,14 +8,10 @@ class MainHeader extends Component {
         return (
             <div>
             <Row className="videoPlayer">
-                <Col>
-                    <div>
-                        <ReactPlayer url='https://www.youtube.com/watch?v=74LiyrmJn18' playing loop width="100%" />
-                    </div>
-                </Col>
+                <ReactPlayer url='https://www.youtube.com/watch?v=74LiyrmJn18' playing loop width="100%" />
             </Row>
             <Row>
-                <Col>
+                <Col sm={12}>
                     <p>Welcome! Select a team to see more details such as roster, year established, and venue name.</p>
                 </Col>
             </Row>

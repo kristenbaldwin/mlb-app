@@ -17,6 +17,11 @@ body {
   text-align: center;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .navbar {
   background-color: #002D72;
   vertical-align: middle;
@@ -57,4 +62,22 @@ body {
 .navbar > .container {
   margin: 0;
   padding: 0 35px;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+  background-color: #002D72;
+}
+
+.open>.dropdown-menu {
+  max-height: 280px;
+  width: 535px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: white;
+  }
 }

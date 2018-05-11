@@ -5,8 +5,8 @@ import '../styles/Footer.css';
 class Footer extends Component {
     render() {
         return (
-            <Row className="footer">
-                <Col>
+            <Row>
+                <Col className="footer">
                     <div>
                         MLB Teams &#169; 2018
                     </div>
