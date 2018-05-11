@@ -57,7 +57,7 @@ class WSvote extends Component {
             }
             if (team.league === "AL") {
                 return (
-                    <option value={team.name_display_full +";http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=175&w=175"}>{team.name_display_full}</option>
+                    <option key={team.name_display_full} value={team.name_display_full +";http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=175&w=175"}>{team.name_display_full}</option>
                 )
             }
         })
@@ -65,7 +65,7 @@ class WSvote extends Component {
         let nlTeams = this.props.allTeams.map((team) => {
             if (team.league === "NL") {
                 return (
-                    <option value={team.name_display_full +";http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=175&w=175"}>{team.name_display_full}</option>
+                    <option key={team.name_display_full}  value={team.name_display_full +";http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=175&w=175"}>{team.name_display_full}</option>
                 )
             }
         })

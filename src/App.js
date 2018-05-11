@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Grid, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Grid, Navbar, Nav, MenuItem, NavItem, NavDropdown } from 'react-bootstrap';
 import { loadAllTeams } from './actions/AllTeams_actions';
+import { LinkContainer } from 'react-router-bootstrap';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Team from './components/Team';
@@ -22,14 +23,16 @@ class App extends Component {
 
   render() {
     // let allTeams = this.props.allTeams.sort(function (a, b) {
-    //   return a.name_display_full - b.name_display_full;
+    //   return a.name_display_short - b.name_display_short;
     // });
     // console.log("see teams", allTeams);
 
     let allTeams = this.props.allTeams.map((team, i) => {
-        let number = i + 1;
+        let number = i + .1;
         return (
-          <MenuItem key={number} eventKey={number}>{team.name_display_full}</MenuItem>
+          <LinkContainer to={"/team/" + team.team_id} key={number}>
+            <MenuItem eventKey={number} onClick={() => this.props.onTeamSelect(team)}>{team.name_display_full}</MenuItem>
+          </LinkContainer>
         )
     })
 
@@ -40,17 +43,23 @@ class App extends Component {
             <Navbar collapseOnSelect>
               <Navbar.Header>
                 <Navbar.Brand>
-                  <a href="/">| MLB Teams |</a>
+                  <LinkContainer to="/">
+                    <a href="/">| MLB Teams |</a>
+                  </LinkContainer>
                 </Navbar.Brand>
                 <Navbar.Toggle />
               </Navbar.Header>
               <Navbar.Collapse>
                 <Nav>
-                  <NavItem eventKey={1} href="/">Home</NavItem>
+                  <LinkContainer to='/'>
+                    <NavItem>Home</NavItem>
+                  </LinkContainer>
                   <NavDropdown eventKey={2} title="Teams" id="basic-nav-dropdown">
                     {allTeams}
                   </NavDropdown>
-                  <NavItem eventKey={3} href="/ws-vote">World Series Prediction</NavItem>
+                  <LinkContainer to ='/ws-vote'>
+                    <NavItem>World Series Prediction</NavItem>
+                  </LinkContainer>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
@@ -76,7 +85,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-      onTeamsLoad: () => dispatch(loadAllTeams())
+      onTeamsLoad: () => dispatch(loadAllTeams()),
+      onTeamSelect: (id) => dispatch({
+        type: "SELECT_TEAM",
+        id: id   
+    })
   }
 }
 
