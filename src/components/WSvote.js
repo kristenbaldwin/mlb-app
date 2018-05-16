@@ -60,6 +60,7 @@ class WSvote extends Component {
                     <option key={team.name_display_full} value={team.name_display_full +";http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=175&w=175"}>{team.name_display_full}</option>
                 )
             }
+            return ''
         })
 
         let nlTeams = this.props.allTeams.map((team) => {
@@ -68,6 +69,7 @@ class WSvote extends Component {
                     <option key={team.name_display_full}  value={team.name_display_full +";http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/" + team.name_abbrev + ".png&h=175&w=175"}>{team.name_display_full}</option>
                 )
             }
+            return ''
         })
 
         let alLogo = 'https://upload.wikimedia.org/wikipedia/en/thumb/5/54/American_League_logo.svg/175px-American_League_logo.svg.png';

@@ -22,6 +22,7 @@ class Home extends Component {
                         </div>
                     )
                 }
+                return ''
             })
 
             let alcTeams = this.props.allTeams.map((team) => {
@@ -36,6 +37,7 @@ class Home extends Component {
                         </div>
                     )
                 }
+                return ''
             })
 
             let alwTeams = this.props.allTeams.map((team) => {
@@ -47,6 +49,7 @@ class Home extends Component {
                         </div>
                     )
                 }
+                return ''
             })
 
             let nleTeams = this.props.allTeams.map((team) => {
@@ -58,6 +61,7 @@ class Home extends Component {
                         </div>
                     )
                 }
+                return ''
             })
 
             let nlcTeams = this.props.allTeams.map((team) => {
@@ -69,6 +73,7 @@ class Home extends Component {
                         </div>
                     )
                 }
+                return ''
             })
 
             let nlwTeams = this.props.allTeams.map((team) => {
@@ -80,6 +85,7 @@ class Home extends Component {
                         </div>
                     )
                 }
+                return ''
             })
 
         return (
